@@ -10,5 +10,14 @@ EXPOSE 80
 # Copy the app
 COPY . /app
 
+RUN ["dnu", "restore"]
+
+EXPOSE 8081
+
 # Start the app
-ENTRYPOINT dotnet DotNetCoreDemoApp.dll
+#ENTRYPOINT dotnet DotNetCoreDemoApp.dll
+ENTRYPOINT ["dnx", "web"]
+
+
+
+
